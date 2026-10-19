@@ -1,0 +1,28 @@
+/* Side menu modelled on the reference showcase: uppercase bold headings, flat links,
+   active item bold in primary color with a left/bottom border, flush to the right edge. */
+
+.heading {
+  margin-top: var(--mantine-spacing-md);
+  padding: 4px 8px;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item {
+  border: 1px solid transparent;
+  border-right: 0;
+  border-radius: var(--mantine-radius-sm) 0 0 var(--mantine-radius-sm);
+}
+
+.item[aria-current='page'] {
+  font-weight: 700;
+  color: var(--mantine-primary-color-filled);
+  background: var(--mantine-color-gray-0);
+  border-left-color: var(--mantine-color-gray-3);
+  border-bottom-color: var(--mantine-color-gray-3);
+}
+
+.item[aria-current='page'] :global(.mantine-NavLink-label) {
+  font-weight: 700;
+}
