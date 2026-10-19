@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { NavLink as RouterNavLink, Outlet } from 'react-router'
 
 import { showcasePages } from '../showcase/pages'
+import classes from './ShellLayout.module.css'
 
 const groups = Map.groupBy(showcasePages, (page) => page.group)
 
@@ -12,7 +13,7 @@ export function ShellLayout() {
   return (
     <AppShell
       header={{ height: 56 }}
-      navbar={{ width: 260, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+      navbar={{ width: 240, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       padding="md"
     >
       <AppShell.Header>
@@ -22,27 +23,31 @@ export function ShellLayout() {
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar p="xs">
+      <AppShell.Navbar py="xs" pl="xs">
         <ScrollArea>
-          <NavLink component={RouterNavLink} to="/" end label="Übersicht" onClick={close} />
+          <NavLink
+            className={classes.item}
+            component={RouterNavLink}
+            to="/"
+            end
+            label="Übersicht"
+            onClick={close}
+          />
           {[...groups].map(([group, pages]) => (
-            <NavLink key={group} label={group} defaultOpened>
+            <nav key={group} aria-label={group}>
+              <Text className={classes.heading}>{group}</Text>
               {pages.map((page) => (
                 <NavLink
                   key={page.path}
+                  className={classes.item}
                   component={RouterNavLink}
                   to={`/${page.path}`}
                   label={page.label}
                   onClick={close}
                 />
               ))}
-            </NavLink>
+            </nav>
           ))}
-          {groups.size === 0 && (
-            <Text size="sm" c="dimmed" p="sm">
-              Noch keine Komponenten vorhanden.
-            </Text>
-          )}
         </ScrollArea>
       </AppShell.Navbar>
 
