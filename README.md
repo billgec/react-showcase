@@ -32,9 +32,11 @@ npm run dev
 ```
 src/
   main.tsx            Providers (Mantine, dates, modals, notifications, router)
-  theme.ts            Mantine theme / design tokens
   router.tsx          Route definitions
-  layout/             App shell (header, navigation)
-  pages/              Static pages (home, 404)
+  shell/              App shell (header, navigation)
+  styles/theme.ts     Colour scales, primary colour, CSS variable resolver
+  styles/tokens.css   Semantic tokens (--primary-color, --surface-card, …) built on the scales
+  pages/              Static pages (home, 404, placeholder)
+  pages/<group>/      Showcase pages, one folder per navigation group
   showcase/pages.ts   Registry of showcase pages – routes and navigation are generated from it
 ```
