@@ -6,7 +6,7 @@ export function AktionenPage() {
         <Title order={2}>Aktionen</Title>
 
         {/* Standard sizes */}
-        <Group justify="center" align="flex-start">
+        <Group justify="center" align="flex-start" >
             <Stack>
                 <h4>Size = 'xs'</h4>
                 <Button size="sm">Standard Button</Button>
