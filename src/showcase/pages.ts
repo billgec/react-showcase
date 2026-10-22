@@ -1,5 +1,7 @@
 import type { ComponentType } from 'react'
 
+import { AktionenPage } from '../pages/AktionenPage'
+
 export interface ShowcasePage {
   /** Route path, mirrors the reference page path without ".xhtml", e.g. "layout/formulare" */
   path: string
@@ -18,7 +20,7 @@ export const showcasePages: ShowcasePage[] = [
 
   { group: 'validierungen', label: 'Pflichtfelder & BV', path: 'validierungen/pflichtfelder' },
 
-  { group: 'layout', label: 'Aktionen', path: 'layout/aktionen' },
+  { group: 'layout', label: 'Aktionen', path: 'layout/aktionen', Component: AktionenPage },
   { group: 'layout', label: 'Confirm Dialog', path: 'layout/confirmdialog' },
   { group: 'layout', label: 'Container', path: 'layout/container' },
   { group: 'layout', label: 'Fileupload', path: 'layout/fileupload' },
