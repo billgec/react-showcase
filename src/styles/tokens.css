@@ -1,0 +1,81 @@
+/** ersetzt Mantine Farben */
+:root {
+  /* White Smoke */
+  --ws-0: #ffffff;
+  --ws-100: #f5f5f5;
+
+  /* ---------- Surface ---------- */
+  --primary-color: #34b379;
+  --accent-color: #0072ef;
+  --surface-ground: var(--ws-0);
+  --surface-section: var(--ws-100);
+  --surface-card: var(--ws-0);
+  --surface-hover: #ebebeb;
+  --mask-bg: var(--ws-0);
+  --highlight-bg: var(--ws-0);
+
+  --success-enabled: #18873d;
+  --success-disabled: color-mix(in srgb, #18873d 50%, transparent);
+  --information-enabled: #0072ef;
+  --information-disabled: color-mix(in srgb, #0072ef 50%, transparent);
+  --question-enabled: #5c5c5c;
+  --question-disabled: color-mix(in srgb, #5c5c5c 50%, transparent);
+  --alert-enabled: #fdbb08;
+  --alert-disabled: color-mix(in srgb, #fdbb08 50%, transparent);
+  --warning-enabled: #f58e15;
+  --warning-disabled: color-mix(in srgb, #f58e15 50%, transparent);
+  --error-enabled: #e01919;
+  --error-disabled: color-mix(in srgb, #e01919 50%, transparent);
+
+  /* ---------- Shadow ---------- */
+  --shadow-8pt: #333333;
+  --shadow-12pt: #333333;
+  --shadow-24pt: #333333;
+
+  /* ---------- Text ---------- */
+  --text-color: #333333;
+  --text-secondary-color: #5c5c5c;
+  --text-disabled-color: #adadad;
+  --text-primary-color: #238659;
+  --highlight-text-color: #333333;
+  --primary-color-text: #333333;
+  --accent-color-text: var(--ws-0);
+
+  --success-text-enabled: #18873d;
+  --success-text-disabled: #51c278;
+  --information-text-enabled: #0072ef;
+  --information-text-disabled: #80b8f7;
+  --question-text-enabled: #5c5c5c;
+  --question-text-disabled: #adadad;
+  --alert-text-enabled: #fdbb08;
+  --alert-text-disabled: #fedd83;
+  --warning-text-enabled: #f58e15;
+  --warning-text-disabled: #ffbc6d;
+  --error-text-enabled: #e01919;
+  --error-text-disabled: #fb6c6c;
+
+  /* ---------- Button ---------- */
+  --primary-enabled: #34b379;
+  --primary-hover: #ade0c9;
+  --primary-pressed: #85d1af;
+  --primary-disabled: #ebebeb;
+  --secondary-enabled: #333333;
+  --secondary-hover: #5c5c5c;
+  --secondary-pressed: #858585;
+  --secondary-disabled: #ebebeb;
+  --tertiary-enabled: #ebebeb;
+  --tertiary-hover: #d6d6d6;
+  --tertiary-pressed: #adadad;
+  --tertiary-disabled: #ebebeb;
+
+  /* ---------- Chart ---------- */
+  --chart-turquoise: #a4dddc;
+  --chart-green-cyan: #28c37c;
+  --chart-violet: #978fed;
+  --chart-yellow: #f6cf7d;
+  --chart-blue: #2a81ba;
+  --chart-cyan: #00bfe9;
+  --chart-pink: #ee89df;
+  --chart-orange: #ffac0b;
+  --chart-lilac: #697be9;
+}

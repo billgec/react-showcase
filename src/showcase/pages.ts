@@ -1,20 +1,19 @@
 import type { ComponentType } from 'react'
 
-import { AktionenPage } from '../pages/AktionenPage'
+import { AktionenPage } from '../pages/layout/AktionenPage'
 
 export interface ShowcasePage {
-  /** Route path, mirrors the reference page path without ".xhtml", e.g. "layout/formulare" */
+  /** Mirrors the reference page path without ".xhtml" */
   path: string
-  /** Label shown in the navigation */
   label: string
   /** Navigation heading, e.g. "layout" */
   group: string
-  /** Page component; pages without one render a placeholder until they are implemented */
+  /** Without one the route renders a placeholder */
   Component?: ComponentType
 }
 
-// Register every showcase page here; routes and navigation are generated from this list.
-// Order and labels follow the reference showcase menu.
+// Routes and navigation are generated from this list; order and labels follow
+// the reference showcase menu.
 export const showcasePages: ShowcasePage[] = [
   { group: 'Building Blocks', label: 'Dialog-Templates', path: 'building-blocks/dialog-templates' },
 

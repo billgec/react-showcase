@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router'
 
-import { ShellLayout } from './layout/ShellLayout'
+import { ShellLayout } from './shell/ShellLayout'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
