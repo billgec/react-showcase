@@ -229,6 +229,8 @@ export const theme = createTheme({
     orange,
     lilac,
   },
+  fontFamily: '"Manrope Variable", sans-serif',
+  headings: { fontFamily: '"Manrope Variable", sans-serif' },
   primaryColor: 'brand',
   primaryShade: 5,
   white: '#ffffff',

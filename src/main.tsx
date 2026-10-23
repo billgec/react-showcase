@@ -3,6 +3,7 @@ import '@mantine/dates/styles.css'
 import '@mantine/notifications/styles.css'
 import '@mantine/dropzone/styles.css'
 import '@mantine/tiptap/styles.css'
+import '@fontsource-variable/manrope'
 import 'dayjs/locale/de'
 
 import './styles/tokens.css'
