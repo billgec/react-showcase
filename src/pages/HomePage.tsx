@@ -5,8 +5,8 @@ export function HomePage() {
     <Stack>
       <Title order={2}>React Showcase</Title>
       <Text>
-        Gegenüberstellung klassischer JSF/PrimeFaces-Komponenten mit React-Umsetzungen auf Basis
-        von Mantine und TanStack Table.
+        Gegenüberstellung klassischer JSF/PrimeFaces-Komponenten mit React-Umsetzungen auf Basis von
+        Mantine und TanStack Table.
       </Text>
     </Stack>
   )

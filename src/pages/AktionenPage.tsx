@@ -1,7 +1,10 @@
-import { Button, Code, Group, List, Stack, Table, Text, Title } from '@mantine/core'
+import { Button, Code, Group, Stack, Table, Text, Title } from '@mantine/core'
 
 const properties = [
-  ['variant', "'filled' (Default), 'light', 'outline', 'subtle', 'transparent', 'white', 'default', 'gradient'"],
+  [
+    'variant',
+    "'filled' (Default), 'light', 'outline', 'subtle', 'transparent', 'white', 'default', 'gradient'",
+  ],
   ['size', "'xs'–'xl', dazu 'compact-xs'–'compact-xl' für flachere Buttons"],
   ['color', 'Theme-Farbe oder CSS-Farbe; ohne Angabe die primaryColor aus theme.ts'],
   ['radius', 'Theme-Key oder CSS-Wert, überschreibt defaultRadius'],
@@ -27,166 +30,297 @@ const jsfMapping = [
 export function AktionenPage() {
   return (
     <Stack>
-        <Title order={2}>Aktionen</Title>
+      <Title order={2}>Aktionen</Title>
 
-        {/* Desctiption */}
-        <Stack gap="md" maw={820}>
-            <Text>
-                Ersetzt <Code>p:commandButton</Code>, <Code>p:commandLink</Code> und <Code>p:button</Code>.
-                Einen eigenen Command-Button gibt es nicht: In JSF braucht er das Formular und{' '}
-                <Code>update</Code>, weil der Server den Zustand hält. Hier ruft der Klick eine
-                Funktion, die den State ändert – React rendert selbst, was davon abhängt.
-            </Text>
+      {/* Desctiption */}
+      <Stack gap="md" maw={820}>
+        <Text>
+          Ersetzt <Code>p:commandButton</Code>, <Code>p:commandLink</Code> und <Code>p:button</Code>
+          . Einen eigenen Command-Button gibt es nicht: In JSF braucht er das Formular und{' '}
+          <Code>update</Code>, weil der Server den Zustand hält. Hier ruft der Klick eine Funktion,
+          die den State ändert – React rendert selbst, was davon abhängt.
+        </Text>
 
-            <Title order={3}>Wichtigste Properties</Title>
-            <Table striped withTableBorder verticalSpacing="xs">
-                <Table.Tbody>
-                    {properties.map(([name, description]) => (
-                        <Table.Tr key={name}>
-                            <Table.Td w={200}><Code>{name}</Code></Table.Td>
-                            <Table.Td>{description}</Table.Td>
-                        </Table.Tr>
-                    ))}
-                </Table.Tbody>
-            </Table>
-            <Text size="sm" c="dimmed">
-                Dazu alle nativen Button-Attribute (<Code>onClick</Code>, <Code>type</Code>,{' '}
-                <Code>form</Code>) und die Style-Props jeder Mantine-Komponente
-                (<Code>mt</Code>, <Code>w</Code>, <Code>ms=&quot;auto&quot;</Code> …).
-            </Text>
+        <Title order={3}>Wichtigste Properties</Title>
+        <Table striped withTableBorder verticalSpacing="xs">
+          <Table.Tbody>
+            {properties.map(([name, description]) => (
+              <Table.Tr key={name}>
+                <Table.Td w={200}>
+                  <Code>{name}</Code>
+                </Table.Td>
+                <Table.Td>{description}</Table.Td>
+              </Table.Tr>
+            ))}
+          </Table.Tbody>
+        </Table>
+        <Text size="sm" c="dimmed">
+          Dazu alle nativen Button-Attribute (<Code>onClick</Code>, <Code>type</Code>,{' '}
+          <Code>form</Code>) und die Style-Props jeder Mantine-Komponente (<Code>mt</Code>,{' '}
+          <Code>w</Code>, <Code>ms=&quot;auto&quot;</Code> …).
+        </Text>
 
-            <Title order={3}>JSF-Entsprechungen</Title>
-            <Table striped withTableBorder verticalSpacing="xs">
-                <Table.Thead>
-                    <Table.Tr>
-                        <Table.Th>PrimeFaces</Table.Th>
-                        <Table.Th>React / Mantine</Table.Th>
-                    </Table.Tr>
-                </Table.Thead>
-                <Table.Tbody>
-                    {jsfMapping.map(([jsf, react]) => (
-                        <Table.Tr key={jsf}>
-                            <Table.Td><Code>{jsf}</Code></Table.Td>
-                            <Table.Td><Code>{react}</Code></Table.Td>
-                        </Table.Tr>
-                    ))}
-                </Table.Tbody>
-            </Table>
+        <Title order={3}>JSF-Entsprechungen</Title>
+        <Table striped withTableBorder verticalSpacing="xs">
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>PrimeFaces</Table.Th>
+              <Table.Th>React / Mantine</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>
+            {jsfMapping.map(([jsf, react]) => (
+              <Table.Tr key={jsf}>
+                <Table.Td>
+                  <Code>{jsf}</Code>
+                </Table.Td>
+                <Table.Td>
+                  <Code>{react}</Code>
+                </Table.Td>
+              </Table.Tr>
+            ))}
+          </Table.Tbody>
+        </Table>
+      </Stack>
+
+      {/* Standard sizes */}
+      <Title order={4}>Standard</Title>
+      <Group justify="center" align="flex-start">
+        <Stack>
+          <h4>Size = 'xs'</h4>
+          <Button size="sm">Standard Button</Button>
+          <Button variant="default" size="xs">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="xs">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="xs">
+            Variant = 'filled'
+          </Button>
+          <Button variant="gradient" size="xs">
+            Variant = 'gradient'
+          </Button>
+          <Button variant="light" size="xs">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="xs">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="xs">
+            Variant = 'transparent'
+          </Button>
         </Stack>
-
-
-        {/* Standard sizes */}
-        <Title order={4}>Standard</Title>
-        <Group justify="center" align="flex-start" >
-            <Stack>
-                <h4>Size = 'xs'</h4>
-                <Button size="sm">Standard Button</Button>
-                <Button variant="default" size="xs">Variant = 'default'</Button>
-                <Button variant="white" size="xs">Variant = 'white'</Button>
-                <Button variant="filled" size="xs">Variant = 'filled'</Button>
-                <Button variant="gradient" size="xs">Variant = 'gradient'</Button>
-                <Button variant="light" size="xs">Variant = 'light'</Button>
-                <Button variant="subtle" size="xs">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="xs">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'sm'</h4>
-                <Button size="sm">Standard Button</Button>
-                <Button variant="default" size="sm">Variant = 'default'</Button>
-                <Button variant="white" size="sm">Variant = 'white'</Button>
-                <Button variant="filled" size="sm">Variant = 'filled'</Button>
-                <Button variant="light" size="sm">Variant = 'light'</Button>
-                <Button variant="subtle" size="sm">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="sm">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'md'</h4>
-                <Button size='md'>Standard button</Button>
-                <Button variant="default" size="md">Variant = 'default'</Button>
-                <Button variant="white" size="md">Variant = 'white'</Button>
-                <Button variant="filled" size="md">Variant = 'filled'</Button>
-                <Button variant="light" size="md">Variant = 'light'</Button>
-                <Button variant="subtle" size="md">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="md">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'lg'</h4>
-                <Button size="lg">Standard Button</Button>
-                <Button variant="default" size="lg">Variant = 'default'</Button>
-                <Button variant="white" size="lg">Variant = 'white'</Button>
-                <Button variant="filled" size="lg">Variant = 'filled'</Button>
-                <Button variant="light" size="lg">Variant = 'light'</Button>
-                <Button variant="subtle" size="lg">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="lg">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'xl'</h4>
-                <Button size="xl">Standard Button</Button>
-                <Button variant="default" size="xl">Variant = 'default'</Button>
-                <Button variant="white" size="xl">Variant = 'white'</Button>
-                <Button variant="filled" size="xl">Variant = 'filled'</Button>
-                <Button variant="light" size="xl">Variant = 'light'</Button>
-                <Button variant="subtle" size="xl">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="xl">Variant = 'transparent'</Button>
-            </Stack>
-        </Group>
+        <Stack>
+          <h4>Size = 'sm'</h4>
+          <Button size="sm">Standard Button</Button>
+          <Button variant="default" size="sm">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="sm">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="sm">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="sm">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="sm">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="sm">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'md'</h4>
+          <Button size="md">Standard button</Button>
+          <Button variant="default" size="md">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="md">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="md">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="md">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="md">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="md">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'lg'</h4>
+          <Button size="lg">Standard Button</Button>
+          <Button variant="default" size="lg">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="lg">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="lg">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="lg">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="lg">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="lg">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'xl'</h4>
+          <Button size="xl">Standard Button</Button>
+          <Button variant="default" size="xl">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="xl">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="xl">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="xl">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="xl">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="xl">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+      </Group>
 
       {/* Compact */}
-        <Title order={4}>Compact</Title>
-        <Group justify="center" align="flex-start">
-            <Stack>
-                <h4>Size = 'compact-xs'</h4>
-                <Button size="compact-xs">Standard Button</Button>
-                <Button variant="default" size="compact-xs">Variant = 'default'</Button>
-                <Button variant="white" size="compact-xs">Variant = 'white'</Button>
-                <Button variant="filled" size="compact-xs">Variant = 'filled'</Button>
-                <Button variant="gradient" size="compact-xs">Variant = 'gradient'</Button>
-                <Button variant="light" size="compact-xs">Variant = 'light'</Button>
-                <Button variant="subtle" size="compact-xs">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="compact-xs">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'compact-sm'</h4>
-                <Button size="compact-sm">Standard Button</Button>
-                <Button variant="default" size="compact-sm">Variant = 'default'</Button>
-                <Button variant="white" size="compact-sm">Variant = 'white'</Button>
-                <Button variant="filled" size="compact-sm">Variant = 'filled'</Button>
-                <Button variant="gradient" size="compact-sm">Variant = 'gradient'</Button>
-                <Button variant="light" size="compact-sm">Variant = 'light'</Button>
-                <Button variant="subtle" size="compact-sm">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="compact-sm">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'compact-md'</h4>
-                <Button size="compact-md">Standard button</Button>
-                <Button variant="default" size="md">Variant = 'default'</Button>
-                <Button variant="white" size="md">Variant = 'white'</Button>
-                <Button variant="filled" size="md">Variant = 'filled'</Button>
-                <Button variant="light" size="md">Variant = 'light'</Button>
-                <Button variant="subtle" size="md">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="md">Variant = 'transparent'</Button>
-            </Stack>
-            <Stack>
-                <h4>Size = 'compact-lg'</h4>
-                <Button size="compact-lg">Standard Button</Button>
-                <Button variant="default" size="compact-lg">Variant = 'default'</Button>
-                <Button variant="white" size="compact-lg">Variant = 'white'</Button>
-                <Button variant="filled" size="compact-lg">Variant = 'filled'</Button>
-                <Button variant="light" size="compact-lg">Variant = 'light'</Button>
-                <Button variant="subtle" size="compact-lg">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="compact-lg">Variant = 'transparent'</Button>
-            </Stack>
-           <Stack>
-                <h4>Size = 'compact-xl'</h4>
-                <Button size="compact-xl">Standard Button</Button>
-                <Button variant="default" size="compact-xl">Variant = 'default'</Button>
-                <Button variant="white" size="compact-xl">Variant = 'white'</Button>
-                <Button variant="filled" size="compact-xl">Variant = 'filled'</Button>
-                <Button variant="light" size="compact-xl">Variant = 'light'</Button>
-                <Button variant="subtle" size="compact-xl">Variant = 'subtle'</Button>
-                <Button variant="transparent" size="compact-xl">Variant = 'transparent'</Button>
-            </Stack>
-        </Group>
+      <Title order={4}>Compact</Title>
+      <Group justify="center" align="flex-start">
+        <Stack>
+          <h4>Size = 'compact-xs'</h4>
+          <Button size="compact-xs">Standard Button</Button>
+          <Button variant="default" size="compact-xs">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="compact-xs">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="compact-xs">
+            Variant = 'filled'
+          </Button>
+          <Button variant="gradient" size="compact-xs">
+            Variant = 'gradient'
+          </Button>
+          <Button variant="light" size="compact-xs">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="compact-xs">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="compact-xs">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'compact-sm'</h4>
+          <Button size="compact-sm">Standard Button</Button>
+          <Button variant="default" size="compact-sm">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="compact-sm">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="compact-sm">
+            Variant = 'filled'
+          </Button>
+          <Button variant="gradient" size="compact-sm">
+            Variant = 'gradient'
+          </Button>
+          <Button variant="light" size="compact-sm">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="compact-sm">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="compact-sm">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'compact-md'</h4>
+          <Button size="compact-md">Standard button</Button>
+          <Button variant="default" size="md">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="md">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="md">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="md">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="md">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="md">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'compact-lg'</h4>
+          <Button size="compact-lg">Standard Button</Button>
+          <Button variant="default" size="compact-lg">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="compact-lg">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="compact-lg">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="compact-lg">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="compact-lg">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="compact-lg">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+        <Stack>
+          <h4>Size = 'compact-xl'</h4>
+          <Button size="compact-xl">Standard Button</Button>
+          <Button variant="default" size="compact-xl">
+            Variant = 'default'
+          </Button>
+          <Button variant="white" size="compact-xl">
+            Variant = 'white'
+          </Button>
+          <Button variant="filled" size="compact-xl">
+            Variant = 'filled'
+          </Button>
+          <Button variant="light" size="compact-xl">
+            Variant = 'light'
+          </Button>
+          <Button variant="subtle" size="compact-xl">
+            Variant = 'subtle'
+          </Button>
+          <Button variant="transparent" size="compact-xl">
+            Variant = 'transparent'
+          </Button>
+        </Stack>
+      </Group>
     </Stack>
   )
 }
