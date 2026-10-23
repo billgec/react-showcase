@@ -51,7 +51,7 @@ export function ShellLayout() {
         </ScrollArea>
       </AppShell.Navbar>
 
-      <AppShell.Main>
+      <AppShell.Main bg="var(--surface-section)">
         <Outlet />
       </AppShell.Main>
     </AppShell>
