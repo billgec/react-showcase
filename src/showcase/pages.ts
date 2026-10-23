@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react'
 
-import { AktionenPage } from '../pages/layout/AktionenPage'
+import { AktionenPage } from '../pages/AktionenPage'
 
 export interface ShowcasePage {
   /** Mirrors the reference page path without ".xhtml" */
