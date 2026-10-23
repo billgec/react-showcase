@@ -21,7 +21,7 @@ npm run dev
 ```
 
 | Script            | Description                     |
-|-------------------|---------------------------------|
+| ----------------- | ------------------------------- |
 | `npm run dev`     | Start the dev server            |
 | `npm run build`   | Type-check and build to `dist/` |
 | `npm run preview` | Serve the production build      |
