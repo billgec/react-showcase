@@ -1,4 +1,5 @@
 import { Button, Code, Group, Paper, Stack, Table, Text, Title } from '@mantine/core'
+import {Check, ChevronDown, Download, Plus, Search, Trash} from 'slimicons'
 
 const properties = [
   [
@@ -317,6 +318,35 @@ export function AktionenPage() {
               Variant = 'transparent'
             </Button>
           </Stack>
+        </Group>
+      </Paper>
+
+      {/* Icons */}
+      <Paper bg="var(--surface-card)" p="md" radius="md" shadow="sm">
+        <Title order={4}>Mit Icons</Title>
+        <Text size="sm" c="dimmed" mt="xs">
+          Slimicons (MIT). <Code>color=&quot;currentColor&quot;</Code> ist nötig, sonst zeichnet das
+          Icon fest in Schwarz statt in der Schriftfarbe des Buttons.
+        </Text>
+        <Group justify="center" mt="md">
+          <Button leftSection={<Plus size={16} color="currentColor" />}>Neu</Button>
+          <Button variant="default" leftSection={<Search size={16} color="currentColor" />}>
+            Suchen
+          </Button>
+          <Button variant="light" leftSection={<Download size={16} color="currentColor" />}>
+            Export
+          </Button>
+          <Button color="error" leftSection={<Trash size={16} color="currentColor" />}>
+            Löschen
+          </Button>
+          <Button variant="subtle" rightSection={<Check size={16} color="currentColor" />}>
+            Fertig
+          </Button>
+        </Group>
+        <Group justify="center" mt="md">
+        <Button leftSection={<ChevronDown size={16} color="currentColor"/>}>
+          Chevron down
+        </Button>
         </Group>
       </Paper>
     </Stack>
